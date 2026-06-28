@@ -5,9 +5,16 @@
 [EN] This project is a two-dimensional (2D) **Twin-Stick Arcade Shooter** game prototype developed using **Godot 4+ (Compatibility Mode)**, featuring industry-standard folder architecture and clean code discipline. For portfolio presentation purposes, it hosts both **PC (Keyboard)** and **Android (Landscape/Dual Virtual Joystick)** versions under a single repository.
 
 ---
-## 📸 Gameplay & UI Preview
-![Robo Dodge Shooter Gameplay](01-Open screen - pc.png)
 
+## 📸 Gameplay & UI Preview
+
+<img width="1280" height="720" alt="01-Open-screen" src="https://github.com/user-attachments/assets/86a0ebfe-3db8-4cbf-96c2-83db7cd22860" />
+<img width="1280" height="720" alt="02-Open-screen" src="https://github.com/user-attachments/assets/3081cd8c-3ff9-45c0-b532-5e257e94c04f" />
+<img width="1280" height="720" alt="03-In-game-pc" src="https://github.com/user-attachments/assets/f1709b43-7ea2-498f-b22e-68ba17baa652" />
+<img width="1280" height="720" alt="04-In-game-pc" src="https://github.com/user-attachments/assets/27d56f9e-87c1-454a-a868-7662722ac32a" />
+<img width="1280" height="720" alt="05-In-game-android" src="https://github.com/user-attachments/assets/59d995e6-6732-4e17-85b8-15b133ae6d2d" />
+<img width="1280" height="720" alt="06-In-game-android" src="https://github.com/user-attachments/assets/24eb72e0-3bd2-41bd-a997-94a0e7a13951" />
+<img width="1366" height="781" alt="07-gameover" src="https://github.com/user-attachments/assets/e4f05871-25dc-4e09-a84d-93c19e194483" />
 
 ---
 
