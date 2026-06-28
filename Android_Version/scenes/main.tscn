@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://f3exnoxeyt0f"]
+
+[ext_resource type="PackedScene" uid="uid://c5683uejmgdl4" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://daxoxaffyadfc" path="res://scripts/game_manager.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://d04dfik33wr2a" path="res://scenes/enemy.tscn" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://kx3d81bfyiif" path="res://assets/sprites/environment/background_space.png" id="3_jyhfs"]
+[ext_resource type="FontFile" uid="uid://c1y833phsphlk" path="res://assets/fonts/PressStart2P-Regular.ttf" id="5_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://bsffix21menwv" path="res://assets/sprites/UI/panel_BG.png" id="6_tefeu"]
+[ext_resource type="Texture2D" uid="uid://dluyp13ek6iln" path="res://assets/sprites/UI/restart_normal.png" id="7_85g3d"]
+[ext_resource type="Texture2D" uid="uid://dte5ieop7hqhw" path="res://assets/sprites/UI/restart_pressed.png" id="8_choun"]
+[ext_resource type="Texture2D" uid="uid://bfeovi20wacji" path="res://assets/sprites/UI/restart_hover.png" id="9_ya4ey"]
+[ext_resource type="Script" uid="uid://c2wrg8avr4rvo" path="res://scripts/virtual_joystick.gd" id="10_a8y0u"]
+[ext_resource type="AudioStream" uid="uid://6hcsjgnl7vir" path="res://assets/sounds/sfx/gameover.wav" id="10_choun"]
+[ext_resource type="Texture2D" uid="uid://cim8byhj71v6j" path="res://assets/sprites/UI/andro-joystick.png" id="10_trceg"]
+[ext_resource type="Texture2D" uid="uid://fbdo44l6pua0" path="res://assets/sprites/UI/andro-joystick-dot.png" id="11_a8y0u"]
+[ext_resource type="AudioStream" uid="uid://chaf3y6vkit4t" path="res://assets/sounds/sfx/gain.wav" id="11_trceg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o6xl0"]
+texture = ExtResource("6_tefeu")
+
+[node name="Main" type="Node2D" unique_id=1710865283]
+script = ExtResource("1_sugp2")
+enemy_scene = ExtResource("2_0wfyh")
+
+[node name="Background" type="TextureRect" parent="." unique_id=411594156]
+offset_left = -229.0
+offset_right = 1516.0
+offset_bottom = 720.0
+texture = ExtResource("3_jyhfs")
+
+[node name="Timer" type="Timer" parent="." unique_id=712809011]
+autostart = true
+
+[node name="Player" parent="." unique_id=1671302613 instance=ExtResource("1_o5qli")]
+position = Vector2(640, 675)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1363621393]
+
+[node name="ScoreLabel" type="Label" parent="UI" unique_id=1222493535]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 29.0
+offset_right = 128.0
+offset_bottom = 61.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_tbgi4")
+theme_override_font_sizes/font_size = 32
+text = "SCORE: 0"
+
+[node name="GameOverPanel" type="Panel" parent="UI" unique_id=1837868760]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -362.0
+offset_top = -386.0
+offset_right = 118.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.39, 1.39)
+theme_override_styles/panel = SubResource("StyleBoxTexture_o6xl0")
+
+[node name="GameOverText" type="Label" parent="UI/GameOverPanel" unique_id=401806043]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = -77.0
+offset_right = 162.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.552962, 1.3596937e-06, 4.813075e-07, 1)
+theme_override_fonts/font = ExtResource("5_tbgi4")
+theme_override_font_sizes/font_size = 36
+text = "GAME OVER"
+
+[node name="RestartButton" type="TextureButton" parent="UI/GameOverPanel" unique_id=454908345]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.94246
+offset_top = 198.56116
+offset_right = 3.057541
+offset_bottom = 251.56116
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture_normal = ExtResource("7_85g3d")
+texture_pressed = ExtResource("8_choun")
+texture_hover = ExtResource("9_ya4ey")
+
+[node name="LeftJoystick" type="Control" parent="UI" unique_id=1326721219]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+script = ExtResource("10_a8y0u")
+
+[node name="Base" type="TextureRect" parent="UI/LeftJoystick" unique_id=1396110988]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_top = -110.0
+offset_right = 150.0
+offset_bottom = 40.0
+texture = ExtResource("10_trceg")
+
+[node name="Stick" type="TextureRect" parent="UI/LeftJoystick/Base" unique_id=2040255721]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 43.0
+offset_top = 41.0
+offset_right = 107.0
+offset_bottom = 105.0
+texture = ExtResource("11_a8y0u")
+
+[node name="RightJoystick" type="Control" parent="UI" unique_id=1757093703]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("10_a8y0u")
+
+[node name="Base" type="TextureRect" parent="UI/RightJoystick" unique_id=2051126267]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
+offset_left = -110.0
+offset_top = -110.0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_trceg")
+
+[node name="Stick" type="TextureRect" parent="UI/RightJoystick/Base" unique_id=476330657]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 44.0
+offset_top = 40.0
+offset_right = 108.0
+offset_bottom = 104.0
+texture = ExtResource("11_a8y0u")
+
+[node name="ScoreSound" type="AudioStreamPlayer" parent="." unique_id=1558609696]
+stream = ExtResource("11_trceg")
+
+[node name="GameOverSoun" type="AudioStreamPlayer" parent="." unique_id=1697365767]
+stream = ExtResource("10_choun")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="UI/GameOverPanel/RestartButton" to="." method="_on_restart_button_pressed"]
