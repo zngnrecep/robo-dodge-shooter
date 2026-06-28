@@ -6,7 +6,7 @@
 
 ---
 ## 📸 Gameplay & UI Preview
-
+![Robo Dodge Shooter Gameplay](01-Open screen - pc.png)
 
 
 ---
