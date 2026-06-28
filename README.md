@@ -42,24 +42,92 @@
 
 [EN] The project is structured with a modular and scalable directory layout to ensure a clean transition from asset creation to coding. Although the sprites feature variable, organic pixel resolutions, they are fully optimized with transparent backgrounds (PNG format).
 
+### 💻 PC Sürümü / PC Version (`PC_Version`)
 res://
- ├─ scenes/              # Modüler sahneler / Modular scenes
- │   ├─ main_menu.tscn   # Karakter seçimli ana menü / Main menu with character selection
- │   ├─ main.tscn        # Core gameplay dünyası / Core gameplay world
- │   ├─ player.tscn      # Oyuncu gövdesi / Player body
- │   ├─ enemy.tscn       # 15 varyasyonlu düşman şablonu / 15-variation enemy template
- │   └─ laser.tscn       # Lazer mermisi sahnesi / Laser projectile scene
- ├─ scripts/             # Sahnelerden ayrıştırılmış kodlar / Decoupled logic scripts
- │   ├─ global.gd        # Veri tutan Autoload / Global data Autoload
- │   ├─ main_menu.gd     # Menü arayüz mantığı / Menu UI logic
- │   ├─ game_manager.gd  # Skor ve zorluk yönetimi / Score and difficulty management
- │   ├─ player.gd        # Fizik motoru ve ateşleme / Physics and shooting mechanics
- │   ├─ enemy.gd         # Rastgele sprite atama / Random sprite assignment
- │   └─ virtual_joystick.gd # Akıllı ortak joystick kodu / Intelligent shared joystick code
- └─ assets/              # Dış kaynaklar / External resources
-     ├─ sprites/         # Arka planı temizlenmiş PNG'ler / Transparent PNG sprites
-     ├─ fonts/           # Retro yazı tipleri / Retro typography
-     └─ sounds/          # SFX ve müzik kütüphanesi / SFX and music library
+
+├─ scenes/                   # Modüler sahneler / Modular scenes
+
+│      ├─ main_menu.tscn        # Ana menü / Main menu
+
+│      ├─ main.tscn             # Oyun dünyası / Core gameplay
+
+│      ├─ player.tscn           # Oyuncu gövdesi / Player body
+
+│      ├─ enemy.tscn            # Düşman şablonu / Enemy template
+
+│      ├─ laser.tscn            # Lazer mermisi / Laser scene
+
+│      └─ music_controller.tscn # Müzik yöneticisi / Music controller
+
+├─ scripts/                  # İş mantığı kodları / Decoupled logic scripts
+
+│      ├─ global.gd             # Hafıza Autoload / Data Autoload
+
+│      ├─ main_menu.gd          # Menü mantığı / Menu logic
+
+│      ├─ game_manager.gd       # Skor ve zorluk / Score and difficulty
+
+│      ├─ player.gd             # Fizik motoru / Physics motor
+
+│      ├─ enemy.gd              # Rastgele sprite atama / Random sprite
+
+│      ├─ laser.gd              # Mermi hareketi / Projectile movement
+
+│      └─ input_manager.gd      # Girdi yöneticisi / Keyboard input manager
+
+└─ assets/                   # Dış kaynaklar / External resources
+
+│      ├─ sprites/              # Arka planı temizlenmiş PNG'ler / Transparent PNG sprites
+
+│      ├─ fonts/                # Retro yazı tipi / Retro typography
+
+│      └─ sounds/               # SFX ve müzik kütüphanesi / SFX and music library
+
+
+
+### 📱 Android Sürümü / Android Version (`Android_Version`)
+res://
+
+├─ scenes/              # Modüler sahneler / Modular scenes
+
+│   ├─ main_menu.tscn   # Karakter seçimli ana menü / Main menu with character selection
+
+│   ├─ main.tscn        # Oyun dünyası / Core gameplay
+
+│   ├─ player.tscn      # Oyuncu gövdesi / Player body
+
+│   ├─ enemy.tscn       # 15 varyasyonlu düşman / 15-variation enemy template
+
+│   ├─ laser.tscn       # Lazer mermisi sahnesi / Laser projectile scene
+
+│   └─ music_controller.tscn # Müzik yöneticisi / Music controller
+
+├─ scripts/             # İş mantığı kodları / Decoupled logic scripts
+
+│   ├─ global.gd        # Veri tutan Autoload / Global data Autoload
+
+│   ├─ main_menu.gd     # Menü arayüz mantığı / Menu UI logic
+
+│   ├─ game_manager.gd  # Skor ve zorluk yönetimi / Score and difficulty management
+
+│   ├─ player.gd        # Fizik motoru ve ateşleme / Physics and shooting mechanics
+
+│   ├─ enemy.gd         # Rastgele sprite atama / Random sprite assignment
+
+│   ├─ laser.gd         # Mermi hareketi / Projectile movement
+
+│   ├─ input_manager.gd # Girdi yöneticisi / Touch input manager
+
+│   └─ virtual_joystick.gd # Akıllı ortak joystick kodu / Intelligent shared joystick code
+
+└─ assets/              # Dış kaynaklar / External resources
+
+│   ├─ sprites/         # Arka planı temizlenmiş PNG'ler / Transparent PNG sprites
+
+│   ├─ fonts/           # Retro yazı tipi / Retro typography
+
+│   └─ sounds/          # SFX ve müzik kütüphanesi / SFX and music library
+
 
 ---
 
