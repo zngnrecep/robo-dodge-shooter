@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://de4go5og04s3"]
+
+[ext_resource type="Script" uid="uid://c0pxplcyjls5r" path="res://scripts/laser.gd" id="1_a7dhc"]
+[ext_resource type="Texture2D" uid="uid://cl55rrjh68v0k" path="res://assets/sprites/environment/fire.png" id="1_xmihv"]
+[ext_resource type="AudioStream" uid="uid://bkf26iglrfwre" path="res://assets/sounds/sfx/explosion.wav" id="3_jjj73"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a7dhc"]
+radius = 3.0
+height = 16.0
+
+[node name="laser" type="Area2D" unique_id=1951685040]
+script = ExtResource("1_a7dhc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1124052850]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_xmihv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1220685541]
+position = Vector2(-13, 10)
+shape = SubResource("CapsuleShape2D_a7dhc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=605141177]
+position = Vector2(12, 10)
+shape = SubResource("CapsuleShape2D_a7dhc")
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="." unique_id=1812479045]
+stream = ExtResource("3_jjj73")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

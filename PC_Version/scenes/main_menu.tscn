@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://bjxh02cpulipy"]
+
+[ext_resource type="Texture2D" uid="uid://kx3d81bfyiif" path="res://assets/sprites/environment/background_space.png" id="1_5dd4i"]
+[ext_resource type="Script" uid="uid://dnk7gid8td8jm" path="res://scripts/main_menu.gd" id="1_lgwnu"]
+[ext_resource type="FontFile" uid="uid://c1y833phsphlk" path="res://assets/fonts/PressStart2P-Regular.ttf" id="2_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://x5y6onuhx32f" path="res://assets/sprites/player/player01.png" id="3_flqon"]
+[ext_resource type="Texture2D" uid="uid://dp2gm1gw1boi5" path="res://assets/sprites/player/player02.png" id="4_rcqid"]
+[ext_resource type="Texture2D" uid="uid://c3dvfb8dhdfnr" path="res://assets/sprites/player/player03.png" id="5_1ajci"]
+[ext_resource type="Texture2D" uid="uid://ck4pmu2lx7lbh" path="res://assets/sprites/player/player04.png" id="6_7b55j"]
+[ext_resource type="Texture2D" uid="uid://blnt08xha1bdp" path="res://assets/sprites/player/player05.png" id="7_5pajh"]
+[ext_resource type="Texture2D" uid="uid://biy6tdeagoydx" path="res://assets/sprites/UI/play_normal.png" id="8_j7ex8"]
+[ext_resource type="Texture2D" uid="uid://dvuyrusv0xk3o" path="res://assets/sprites/UI/play_pressed.png" id="9_a8gd2"]
+[ext_resource type="Texture2D" uid="uid://t6v3158qkrjy" path="res://assets/sprites/UI/play_hover.png" id="10_hstxw"]
+
+[node name="MainMenu" type="Control" unique_id=844132661]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lgwnu")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2084207869]
+layout_mode = 0
+offset_left = -229.0
+offset_right = 1516.0
+offset_bottom = 720.0
+texture = ExtResource("1_5dd4i")
+
+[node name="Label" type="Label" parent="." unique_id=1648483392]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 232.5
+offset_right = 1045.0
+offset_bottom = 277.5
+theme_override_fonts/font = ExtResource("2_lgwnu")
+theme_override_font_sizes/font_size = 45
+text = "ROBO DODGE SHOOTER"
+
+[node name="Label2" type="Label" parent="." unique_id=2069616475]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 281.5
+offset_right = 1045.0
+offset_bottom = 362.5
+theme_override_fonts/font = ExtResource("2_lgwnu")
+theme_override_font_sizes/font_size = 25
+text = "
+
+Choose a ship:"
+
+[node name="Ship1" type="TextureButton" parent="." unique_id=668885048]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 366.5
+offset_right = 299.0
+offset_bottom = 430.5
+scale = Vector2(2, 2)
+texture_normal = ExtResource("3_flqon")
+
+[node name="Ship2" type="TextureButton" parent="." unique_id=503285925]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 367.0
+offset_right = 482.0
+offset_bottom = 431.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("4_rcqid")
+
+[node name="Ship3" type="TextureButton" parent="." unique_id=1105669912]
+layout_mode = 0
+offset_left = 595.0
+offset_top = 367.0
+offset_right = 659.0
+offset_bottom = 431.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("5_1ajci")
+
+[node name="Ship4" type="TextureButton" parent="." unique_id=642360176]
+layout_mode = 0
+offset_left = 773.0
+offset_top = 367.0
+offset_right = 837.0
+offset_bottom = 431.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("6_7b55j")
+
+[node name="Ship5" type="TextureButton" parent="." unique_id=166175665]
+layout_mode = 0
+offset_left = 940.0
+offset_top = 367.0
+offset_right = 1004.0
+offset_bottom = 431.0
+scale = Vector2(2, 2)
+size_flags_horizontal = 4
+texture_normal = ExtResource("7_5pajh")
+
+[node name="PlayButton" type="TextureButton" parent="." unique_id=1746714861]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -179.99997
+offset_top = 155.0
+offset_right = -65.0
+offset_bottom = 208.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+texture_normal = ExtResource("8_j7ex8")
+texture_pressed = ExtResource("9_a8gd2")
+texture_hover = ExtResource("10_hstxw")
+
+[connection signal="pressed" from="Ship1" to="." method="_on_ship_1_pressed"]
+[connection signal="pressed" from="Ship2" to="." method="_on_ship_2_pressed"]
+[connection signal="pressed" from="Ship3" to="." method="_on_ship_3_pressed"]
+[connection signal="pressed" from="Ship4" to="." method="_on_ship_4_pressed"]
+[connection signal="pressed" from="Ship5" to="." method="_on_ship_5_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
